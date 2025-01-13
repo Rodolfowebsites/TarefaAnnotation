@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>AnnotationProcessor.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AnnotationProcessor.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">import </span><span class="s0">java.lang.reflect.Field</span><span class="s1">;</span>
+
+<span class="s1">public class </span><span class="s0">AnnotationProcessor {</span>
+    <span class="s1">public static void </span><span class="s0">processarTabela(Class&lt;?&gt; clazz) {</span>
+        <span class="s2">// Verifica se a classe possui a annotation @Tabela</span>
+        <span class="s1">if </span><span class="s0">(clazz.isAnnotationPresent(Tabela.</span><span class="s1">class</span><span class="s0">)) {</span>
+            <span class="s0">Tabela tabela = clazz.getAnnotation((Tabela.</span><span class="s1">class</span><span class="s0">))</span><span class="s1">;</span>
+            <span class="s0">System.out.println(</span><span class="s3">&quot;Tabela: &quot; </span><span class="s0">+ tabela.nome())</span><span class="s1">;</span>
+
+            <span class="s2">// Verifica os campos e busca as annotations @Coluna</span>
+            <span class="s0">Field[] campos = clazz.getDeclaredFields()</span><span class="s1">;</span>
+            <span class="s1">for </span><span class="s0">(Field campo : campos) {</span>
+                <span class="s1">if </span><span class="s0">(campo.isAnnotationPresent(Coluna.</span><span class="s1">class</span><span class="s0">)) {</span>
+                    <span class="s0">Coluna coluna = campo.getAnnotation(Coluna.</span><span class="s1">class</span><span class="s0">)</span><span class="s1">;</span>
+                    <span class="s0">System.out.println(</span><span class="s3">&quot; - Coluna: &quot; </span><span class="s0">+ coluna.nome() + </span><span class="s3">&quot; (Tipo: &quot; </span><span class="s0">+ campo.getType().getSimpleName() + </span><span class="s3">&quot;)&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">}</span>
+            <span class="s0">}</span>
+        <span class="s0">} </span><span class="s1">else </span><span class="s0">{</span>
+            <span class="s0">System.out.println(</span><span class="s3">&quot;A classe &quot; </span><span class="s0">+ clazz.getSimpleName() + </span><span class="s3">&quot; não está anotada com @Tabela.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

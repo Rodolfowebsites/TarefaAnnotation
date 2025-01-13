@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Pessoa.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Pessoa.java</font>
+</center></td></tr></table>
+<pre><span class="s0">@Tabela(nome = </span><span class="s1">&quot;Pessoa&quot;</span><span class="s0">)</span>
+<span class="s2">public class </span><span class="s0">Pessoa {</span>
+    <span class="s0">@Coluna(nome = </span><span class="s1">&quot;id&quot;</span><span class="s0">)</span>
+    <span class="s2">private int </span><span class="s0">id</span><span class="s2">;</span>
+
+    <span class="s0">@Coluna(nome = </span><span class="s1">&quot;nome&quot;</span><span class="s0">)</span>
+    <span class="s2">private </span><span class="s0">String nome</span><span class="s2">;</span>
+
+    <span class="s0">@Coluna(nome = </span><span class="s1">&quot;idade&quot;</span><span class="s0">)</span>
+    <span class="s2">private int </span><span class="s0">idade</span><span class="s2">;</span>
+
+    <span class="s3">// Construtor, Getters e Setters</span>
+    <span class="s2">public </span><span class="s0">Pessoa(</span><span class="s2">int </span><span class="s0">id</span><span class="s2">, </span><span class="s0">String nome</span><span class="s2">, int </span><span class="s0">idade) {</span>
+        <span class="s2">this</span><span class="s0">.id = id</span><span class="s2">;</span>
+        <span class="s2">this</span><span class="s0">.nome = nome</span><span class="s2">;</span>
+        <span class="s2">this</span><span class="s0">.idade = idade</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public int </span><span class="s0">getId() {</span>
+        <span class="s2">return </span><span class="s0">id</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public void </span><span class="s0">setId(</span><span class="s2">int </span><span class="s0">id) {</span>
+        <span class="s2">this</span><span class="s0">.id = id</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public </span><span class="s0">String getNome() {</span>
+        <span class="s2">return </span><span class="s0">nome</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public void </span><span class="s0">setNome(String nome) {</span>
+        <span class="s2">this</span><span class="s0">.nome = nome</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public int </span><span class="s0">getIdade() {</span>
+        <span class="s2">return </span><span class="s0">idade</span><span class="s2">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">public void </span><span class="s0">setIdade(</span><span class="s2">int </span><span class="s0">idade) {</span>
+        <span class="s2">this</span><span class="s0">.idade = idade</span><span class="s2">;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>
